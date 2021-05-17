@@ -1,0 +1,24 @@
+{
+  "name": "drinks-it/monitoring",
+  "description": "Miscellaneous monitoring tools",
+  "keywords": ["monitoring", "opsgenie", "datadog"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "dvolik",
+      "email": "killoff@gmail.com"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">=7.2",
+    "psr/log": "^1.1",
+    "jtl-software/opsgenie-client": "^2.0",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Monitoring\\": "src/Monitoring/"
+    }
+  }
+}
