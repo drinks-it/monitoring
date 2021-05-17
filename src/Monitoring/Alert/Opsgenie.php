@@ -8,10 +8,16 @@ use JTL\OpsGenie\Client\Alert\CreateAlertResponse;
 use JTL\OpsGenie\Client\AlertApiClient;
 use JTL\OpsGenie\Client\HttpClient;
 
-class Opsgenie
+final class Opsgenie
 {
-    public function raise($title, $description, array $tags = [], $entity = null, $alias = null, $source = null)
-    {
+    public function raise(
+        string $title,
+        string $description,
+        array $tags = [],
+        string $entity = null,
+        string $alias = null,
+        string $source = null
+    ) : CreateAlertResponse {
         $client = new AlertApiClient(HttpClient::createForEUApi(getenv('OPSGENIE_API_KEY')));
         $alert = new Alert(
             $entity ?? '',
